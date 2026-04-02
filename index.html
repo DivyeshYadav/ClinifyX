@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClinifyX</title>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <script>
+    (function () {
+      emailjs.init("6RE8_B4xFI24812NG"); // Replace with your EmailJS User ID
+    })();
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0b0b0b, #1a1a1a);
+      color: white;
+    }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 60px;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.6);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      color: #ff2e2e;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: white;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: red;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 140px 20px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      background: linear-gradient(to right, #ff2e2e, white);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      margin: 20px auto;
+      max-width: 600px;
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 14px 35px;
+      background: linear-gradient(45deg, #ff2e2e, #ff6b6b);
+      border: none;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* SERVICES */
+    .services {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .services h2 {
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border-radius: 15px;
+      padding: 30px;
+      width: 260px;
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-12px) scale(1.03);
+    }
+
+    .card h3 {
+      color: #ff2e2e;
+      margin-bottom: 10px;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      color: #bbb;
+    }
+
+    /* CONTACT */
+    .contact {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 280px;
+      padding: 12px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+      background: #1a1a1a;
+      color: white;
+    }
+
+    .contact button {
+      display: block;
+      margin: 10px auto;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: black;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <h1>ClinifyX</h1>
+    <div>
+      <a href="#">Home</a>
+      <a href="#Services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Next-Gen Digital Solutions</h1>
+    <p>I design modern, high-performance websites and software solutions that help businesses grow faster.</p>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="Services">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Software</h3>
+        <p>Custom software tailored for your business.</p>
+      </div>
+      <div class="card">
+        <h3>Web Design</h3>
+        <p>Modern, responsive website design.</p>
+      </div>
+      <div class="card">
+        <h3>Automation</h3>
+        <p>Automate your workflow efficiently.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>I am a solo developer building powerful digital solutions. My goal is to create impactful software and websites
+      that stand out.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required><br>
+      <input type="email" name="email" placeholder="Your Email" required><br>
+      <textarea name="message" placeholder="Your Message" required></textarea><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 ClinifyX. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_47gg2fa', 'template_vcpv218', this)
+        .then(() => {
+          alert('Message sent successfully!');
+          this.reset();
+        }, (err) => {
+          alert('Failed to send message: ' + JSON.stringify(err));
+        });
+    });
+  </script>
+
+</body>
+
+</html>
